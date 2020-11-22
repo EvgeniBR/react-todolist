@@ -49,16 +49,19 @@ function TodoList() {
   };
 
   return (
-    <>
+    <div >
       <TodoForm onSubmit={addTodo} />
-      <h1>Todos for Climacell</h1>
+      <div className="list-container">
+      <h1>Todo List <hr className="line" /></h1>
+      
       <Todo
         todos={todos}
         completeTodo={completeTodo}
         removeTodo={removeTodo}
         updateTodo={updateTodo}
       />
-    </>
+      </div>
+    </div>
   );
 }
 

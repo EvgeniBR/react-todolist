@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import TodoForm from '../todoForm/TodoForm';
-import { RiCloseCircleLine } from 'react-icons/ri';
-import { TiEdit } from 'react-icons/ti';
+
 
 const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   const [edit, setEdit] = useState({
@@ -9,6 +8,7 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     value: ''
   });
 
+  
   const submitUpdate = value => {
     updateTodo(edit.id, value);
     setEdit({
@@ -22,23 +22,29 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   }
 
   return todos.map((todo, index) => (
+    <div>
     <div
       className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}
     >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+
+      <div key={todo.id} >
+        <input type="checkbox" onClick={() => completeTodo(todo.id)}/>
+        <i className={todo.isComplete ? 'far fa-check-square' : 'far fa-minus-square'}></i>
         {todo.text}
       </div>
       <div className='icons'>
-        <RiCloseCircleLine
-          onClick={() => removeTodo(todo.id)}
-          className='delete-icon'
-        />
-        <TiEdit
-          onClick={() => setEdit({ id: todo.id, value: todo.text })}
-          className='edit-icon'
-        />
+        <button className="delete-icon">
+      <i className="far fa-trash-alt" onClick={() => removeTodo(todo.id)} ></i>
+      </button>
+        <button className="edit-icon">
+        <i className="far fa-edit" onClick={() => setEdit({ id: todo.id, value: todo.text })}></i>
+      </button>
+      
       </div>
+
+    </div>
+    <hr className="underLine"/>
     </div>
   ));
 };

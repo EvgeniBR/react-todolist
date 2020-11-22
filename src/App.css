@@ -1,32 +1,47 @@
 * {
   box-sizing: border-box;
-  
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
+body{
+  background: rgb(236, 234, 234);
+}
 .complete {
   text-decoration: line-through;
 }
+.todo-app {
+  min-height: 600px;
+  margin: 18px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+  width:750px;
+}
+h1 {
+  font-size: 24px;
+}
 
 .todo-input {
-  padding: 14px 16px;
+  margin-bottom: 40px;
+  padding: 9px 16px;
   border-radius: 4px 0 0 4px;
-  width: 500px;
-  background: transparent;
+  width: 550px;
+  background: white;
+  font-family: FontAwesome;
 }
 
 .todo-button {
-  padding: 16px;
+  width:150px;
+  margin-left: 50px;
+  padding: 10px;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   outline: none;
-  background: linear-gradient(
-    90deg,
-    rgba(93, 12, 255, 1) 0%,
-    rgba(155, 0, 250, 1) 100%
-  );
+  background: rgb(62, 114, 255);
   color: #fff;
+}
+.list-container{
+  background: white;
+  border : solid lightgrey 1px;
 }
 
 .todo-input.edit {
@@ -51,14 +66,47 @@
 .todo-row {
   display: flex;
   justify-content: space-between;
-  width: 500px;
-  margin: 4px;
+  width: 730px;
+  /* margin: 4px; */
+  padding: 5px;
 }
-
+.underLine{
+  width: 670px;
+  color: rgb(236, 234, 234);
+  border-color:  rgb(236, 234, 234);
+}
+hr{
+  border-top:1px solid rgb(236, 234, 234);
+}
 .icons {
   display: flex;
   align-items: center;
   font-size: 24px;
   cursor: pointer;
+  margin:0 10px;
 }
 
+.delete-icon,
+.edit-icon{
+  margin-right: 10px;
+  background: rgb(236, 234, 234);
+  width:30px;
+  text-align: center;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.delete-icon i{
+  color:red
+}
+.edit-icon i{
+  color:blue
+}
+.fa-check-square{
+  color:lightgreen;
+  font-size: 1rem;
+}
+.fa-minus-square{
+  color: red;
+}
